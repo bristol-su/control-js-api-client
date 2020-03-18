@@ -3,8 +3,13 @@
   "version": "1.0.3",
   "description": "A JS API Client to interact with the Bristol SU Control Package",
   "main": "index.js",
+  "licence: "GPL-3.0-or-later",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bristol-su/control-js-api-client.git"
   },
   "author": "Toby Twigger <toby.twigger@bristol.ac.uk>",
   "license": "ISC",
