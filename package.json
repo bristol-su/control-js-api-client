@@ -6,10 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bristol-su/control-js-api-client.git"
-  },
   "author": "Toby Twigger <toby.twigger@bristol.ac.uk>",
   "license": "ISC",
   "bugs": {
