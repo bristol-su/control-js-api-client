@@ -1,6 +1,6 @@
 {
   "name": "@bristol-su/control-js-api-client",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A JS API Client to interact with the Bristol SU Control Package",
   "main": "index.js",
   "licence: "GPL-3.0-or-later",
