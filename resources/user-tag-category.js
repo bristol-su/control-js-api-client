@@ -2,8 +2,8 @@ import BaseResource from './../baseresource';
 
 export default class extends BaseResource{
 
-    all() {
-        return this.request('get', '/user-tag-category');
+    all(page, perPage) {
+        return this.request('get', '/user-tag-category', null, {page: page, per_page: perPage});
     }
 
     delete(userTagCategoryId) {
@@ -22,8 +22,8 @@ export default class extends BaseResource{
         return this.request('post', '/user-tag-category', attributes);
     }
 
-    tags(userTagCategoryId) {
-        return this.request('get', '/user-tag-category/' + userTagCategoryId + '/user-tag');
+    tags(userTagCategoryId, page, perPage) {
+        return this.request('get', '/user-tag-category/' + userTagCategoryId + '/user-tag', null, {page: page, per_page: perPage});
     }
 
 }

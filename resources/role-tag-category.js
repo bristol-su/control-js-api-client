@@ -2,8 +2,8 @@ import BaseResource from './../baseresource';
 
 export default class extends BaseResource{
 
-    all() {
-        return this.request('get', '/role-tag-category');
+    all(page, perPage) {
+        return this.request('get', '/role-tag-category', null, {page: page, per_page: perPage});
     }
 
     delete(roleTagCategoryId) {
@@ -22,8 +22,8 @@ export default class extends BaseResource{
         return this.request('post', '/role-tag-category', attributes);
     }
 
-    tags(roleTagCategoryId) {
-        return this.request('get', '/role-tag-category/' + roleTagCategoryId + '/role-tag');
+    tags(roleTagCategoryId, page, perPage) {
+        return this.request('get', '/role-tag-category/' + roleTagCategoryId + '/role-tag', null, {page: page, per_page: perPage});
     }
 
 }

@@ -2,8 +2,8 @@ import BaseResource from './../baseresource';
 
 export default class extends BaseResource{
 
-    all() {
-        return this.request('get', '/position-tag');
+    all(page, perPage) {
+        return this.request('get', '/position-tag', null, {page: page, per_page: perPage});
     }
 
     delete(positionTagId) {
@@ -22,8 +22,8 @@ export default class extends BaseResource{
         return this.request('post', '/position-tag', attributes);
     }
 
-    positions(positionTagId) {
-        return this.request('get', '/position-tag/' + positionTagId + '/position');
+    positions(positionTagId, page, perPage) {
+        return this.request('get', '/position-tag/' + positionTagId + '/position', null, {page: page, per_page: perPage});
     }
 
     tagPosition(positionTagId, positionId) {

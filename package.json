@@ -19,5 +19,8 @@
   "homepage": "https://github.com/bristol-su/control-js-api-client#readme",
   "dependencies": {
     "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
   }
 }

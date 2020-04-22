@@ -2,8 +2,8 @@ import BaseResource from './../baseresource';
 
 export default class extends BaseResource{
 
-    all() {
-        return this.request('get', '/user');
+    all(page, perPage) {
+        return this.request('get', '/user', null, {page: page, per_page: perPage});
     }
 
     delete(userId) {
@@ -14,6 +14,12 @@ export default class extends BaseResource{
         return this.request('get', '/user/' + userId);
     }
 
+    getAllWhere(attributes, page, perPage) {
+        return this.request('get', '/user/search', {}, {
+            ...attributes, per_page: perPage, page: page
+        });
+    }
+
     update(userId, attributes) {
         return this.request('patch', '/user/' + userId, attributes);
     }
@@ -22,8 +28,8 @@ export default class extends BaseResource{
         return this.request('post', '/user', attributes);
     }
 
-    tags(userId) {
-        return this.request('get', '/user/' + userId + '/tag');
+    tags(userId, page, perPage) {
+        return this.request('get', '/user/' + userId + '/tag', null, {page: page, per_page: perPage});
     }
 
     tag(userId, tagId) {
@@ -34,8 +40,8 @@ export default class extends BaseResource{
         return this.request('delete', '/user/' + userId + '/tag/' + tagId);
     }
 
-    roles(userId) {
-        return this.request('get', '/user/' + userId + '/role');
+    roles(userId, page, perPage) {
+        return this.request('get', '/user/' + userId + '/role', null, {page: page, per_page: perPage});
 
     }
 
@@ -49,9 +55,8 @@ export default class extends BaseResource{
 
     }
 
-    groups(userId) {
-        return this.request('get', '/user/' + userId + '/group');
-
+    groups(userId, page, perPage) {
+        return this.request('get', '/user/' + userId + '/group', null, {page: page, per_page: perPage});
     }
 
     addGroup(userId, groupId) {

@@ -2,8 +2,8 @@ import BaseResource from './../baseresource';
 
 export default class extends BaseResource{
 
-    all() {
-        return this.request('get', '/group-tag-category');
+    all(page, perPage) {
+        return this.request('get', '/group-tag-category', null, {page: page, per_page: perPage});
     }
 
     delete(groupTagCategoryId) {
@@ -22,8 +22,8 @@ export default class extends BaseResource{
         return this.request('post', '/group-tag-category', attributes);
     }
 
-    tags(groupTagCategoryId) {
-        return this.request('get', '/group-tag-category/' + groupTagCategoryId + '/group-tag');
+    tags(groupTagCategoryId, page, perPage) {
+        return this.request('get', '/group-tag-category/' + groupTagCategoryId + '/group-tag', null, {page: page, per_page: perPage});
     }
 
 }
