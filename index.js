@@ -14,14 +14,14 @@ import PositionTagCategory from './resources/position-tag-category';
 
 // TODO Implement Cache
 export default class {
-    constructor(baseUrl, axios) {
-        this._http = axios.create({
-            baseURL: baseUrl,
-            withCredentials: true,
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-            }
-        });
+    constructor(baseUrl, axios, config = {}) {
+        config.baseURL = baseUrl;
+        config.withCredentials = true;
+        if(!Object.prototype.hasOwnProperty.call(config, 'headers')) {
+            config.headers = {};
+        }
+        config.headers['X-Requested-With'] = 'XMLHttpRequest';
+        this._http = axios.create(config);
     }
 
     group() {
